@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  </head>
+  <body>
+  	<button type="button" class="exist" onclick="location.href='/login'">退出</button>
+       <%- include('top.ejs') %>
+	 <div class="wrap">
+	 	  <form action="/message" method="post" class="liuyan">   <!--路径是个中间值， 随便写一个来接收一下-->
+        	<p>用户名：<input type="text" class="form-control" placeholder="Text input" name="title"></p>
+        	<p>留言：<textarea class="form-control" rows="10" name="con"></textarea></p>
+        	<p> <button type="submit" class="btn btn-default" name="submit">点击发布</button></p>
+        </form>
+        <div class="messageRight">
+        	<!--<img src="/images/message.jpg" class="liuyanban"/>-->
+        	   <table class="table">
+        	   	<% if(shuju.length>0){ %>
+        	   	<% shuju.forEach(function(item,index){ %>
+        	   	<tr>
+        	   		<td><span class="index"><%- index%></span><span class="content"><%- item.con%></span><span class="name"><%- item.title%></span></td>
+        	   		<td></td>
+        	   	</tr>
+        	   	<% }) %>
+        	   	<% } %>
+        	   </table>
+        </div>
+	 </div>
+  	
+  </div>
+       
+  </body>
+</html>

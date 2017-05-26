@@ -1,0 +1,111 @@
+body {
+   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image:url(/images/top.jpg);
+	  background-repeat:no-repeat;
+	  background-size:100% 620px;
+	  background-color:#c7cbbd !important;
+	/*  background:#00B7FF url("/images/top.jpg") no-repeat;*/
+}
+.wrap{ width: 1000px; margin: auto; }
+a {
+  color: #00B7FF;
+}
+.head{
+	 float: right;
+	 margin-right: 10px;
+	 margin-top: 5px;
+	 position: absolute;
+	 right: 0;
+	 top: 0;
+	
+}
+.message{
+	font-size: 16px;
+	margin-left:100px ;
+	margin-top: 20px;
+}
+.login{
+	height: 400px;
+	width: 400px;
+	margin: 200px 300px;
+} 
+.regist{
+	height: 400px;
+	width: 400px;
+	margin-left: 280px;
+	margin-top: 206px;
+}
+.loginButton,.registButton{margin-top: 20px; }
+/************************************information************************/
+.information{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	 margin-left: 50px; 
+}
+.information span{  font-size: 20px; margin-left: 10px; }
+.xixi{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+}
+.exist{
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.top{
+	height: 100px;
+	width: 100%;
+}
+.top a{
+	float: left;
+	font-size: 16px;
+	padding: 30px;
+	color: #2E6DA4;
+	cursor: pointer;
+}
+.left{
+	width: 400px;
+	height: auto;	 
+	float: left;
+}
+.right{
+	width: 550px;
+	height: auto;
+	background: white;
+	float: right;
+}
+.liuyan{height: 500px;  width: 300px;   float: left;}
+.messageRight{  height:auto; width: 650px;  float: right; padding: 50px;   margin-left: 50px; }
+.index{ height: 30px; width: 30px; background: #f7f7f7; text-align: center; line-height: 30px; display: inline-block;
+             margin-right: 10px; border: 1px solid #ebebeb;}
+.titles{ color: #003333 !important; }
+.name{ display: inline-block;  float: right; color: #999999; margin-left: 5px;}
+.content{ color: #2d64b3; width: 440px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.liuyanban{  height: 150px;  width: 530px; margin-top: -50px;}
+
+
+
+.center{
+	background: yellowgreen;
+	height: auto;
+	width: 1000px;
+}
+.thumbnails{
+	width: 400px;
+	padding: 20px;
+	float: left;
+	margin-left: 50px;
+}
+#one{
+	position: absolute;
+    top: 634px;
+    left: 436px;
+}
+#two{
+	top: 641px;
+    position: absolute;
+    right: 262px;
+}
+ 

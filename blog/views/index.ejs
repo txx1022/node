@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"/>
+    <script src="/javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/bootstrap.js" type="text/javascript" charset="utf-8"></script>   
+   
+</head>
+<body>
+<form>
+	
+	<!-- <p class="message">编程：指尖上的舞蹈，键盘上的艺术。</p>-->
+	
+     <% if(!user){ %>
+	      <%- include('head.ejs')%>
+       <% }else{ %>
+       	   <button type="button" class="exist" onclick="location.href='/exist'">退出</button>
+	     <% } %>
+	 <%- include('top.ejs') %>
+	 <div class="wrap">	 
+	 	<div class="center">
+	 		 <ul class="thumbnails">
+			  <li class="span4">
+			    <div class="thumbnail">
+			      <img src="/images/ao.jpg" alt="">
+			      <h3>React 设计思想</h3>
+			      <p>我写此文是想正式地阐述我心中 React 的心智模型。目的是解释为什么我们会这样设计 React，同时你也可以根据这些论点反推出 React。</p>
+			    </div>
+			  </li>			  
+			</ul>
+			<ul class="thumbnails">
+			  <li class="span4">
+			    <div class="thumbnail">
+			      <img src="/images/640" alt="">
+			      <h3>当你们羡慕IT程序员月薪两三万时，请看深圳这些科技公司的夜晚</h3>
+			      <p>
+在深圳有这样一群人，住着十几平方的城中村农民房，二十七八岁没有女朋友，每天早出晚归，月薪两三万，当别人看到他们衣 ....</p>
+			    </div>
+			  </li>			  
+			</ul>	
+	 	</div>
+	 </div>
+</form>
+
+
+
+<!-- Button trigger modal -->
+<button id="one" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  查看更多
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">戳我~~</h4>
+      </div>
+      <div class="modal-body">
+      	不可否认，此文中的部分论据或前提尚存争议，而且部分示例的设计可能存在 bug 或疏忽。这只是正式确定它的最初阶段。如果你有更好的完善它的想法可以随时提交 pull request。本文不会介绍框架细节中的奇技淫巧，相信这样能提纲挈领，让你看清 React 由简单到复杂的设计过程。
+React.js 的真实实现中充满了具体问题的解决方案，渐进式的解法，算法优化，历史遗留代码，debug 工具以及其他一些可以让它真的具有高可用性的内容。这些代码可能并不稳定，因为未来浏览器的变化和功能权重的变化随时面临改变。所以具体的代码很难彻底解释清楚。
+我偏向于选择一种我能完全 hold 住的简洁的心智模型来作介绍。
+<p>变换（Transformation）
+
+设计 React 的核心前提是认为 UI 只是把数据通过映射关系变换成另一种形式的数据。同样的输入必会有同样的输出。这恰好就是纯函数。</p>
+<p>抽象（Abstraction）
+
+你不可能仅用一个函数就能实现复杂的 UI。重要的是，你需要把 UI 抽象成多个隐藏内部细节，又可复用的函数。通过在一个函数中调用另一个函数来实现复杂的 UI，这就是抽象。</p>
+<p>组合（Composition）
+
+为了真正达到重用的特性，只重用叶子然后每次都为他们创建一个新的容器是不够的。你还需要可以包含其他抽象的容器再次进行组合。我理解的“组合”就是将两个或者多个不同的抽象合并为一个。</p>
+<p>状态（State）
+
+UI 不单单是对服务器端或业务逻辑状态的复制。实际上还有很多状态是针对具体的渲染目标。举个例子，在一个 text field 中打字。它不一定要复制到其他页面或者你的手机设备。滚动位置这个状态是一个典型的你几乎不会复制到多个渲染目标的。
+
+我们倾向于使用不可变的数据模型。我们把可以改变 state 的函数串联起来作为原点放置在顶层。</p>
+<p>Memoization
+
+对于纯函数，使用相同的参数一次次调用未免太浪费资源。我们可以创建一个函数的 memorized 版本，用来追踪最后一个参数和结果。这样如果我们继续使用同样的值，就不需要反复执行它了。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button id="two" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  查看更多
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">戳我~~</h4>
+      </div>
+      <div class="modal-body">
+      <p> 腾讯：与我们每个人的生活都息息相关，也是2017中国上市公司中市值最大的，半夜11点的腾讯依旧是灯火通明。</p>
+     <p>中兴：通讯届的扛把子，在半夜11.00也是还在艰苦奋战，每一份收货都来之不易。</p>
+     <p>联想：中国最具实力的电脑公司，半夜11.00工程师们还在霹雳扒拉的敲打着键盘，一滴滴汗水换来一行行代码</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+	$(".accordion").collapse()
+</script>
+</html>
